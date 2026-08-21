@@ -1,5 +1,6 @@
 package com.ironsouls.account.service;
 
+import com.ironsouls.account.exception.UserNotFoundException;
 import com.ironsouls.account.model.User;
 import com.ironsouls.account.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +20,9 @@ public class UserService {
         return userRepository.findAll();
     }
 
-    public Optional<User> getUserById(UUID userId){
-        return userRepository.findById(userId);
+    public User getUserById(UUID userId){
+        return userRepository.findById(userId)
+                .orElseThrow(()-> new UserNotFoundException(userId));
     }
 
     public User saveUser (User user) {

@@ -1,1 +1,1 @@
-INSERT INTO users (id, username, email, password) VALUES ('550e8400-e29b-41d4-a716-446655440000', 'admin', 'admin@example.com', '123456');
+INSERT INTO users (id, username, email, password) VALUES ('550e8400-e29b-41d4-a716-446655440000', 'admin', 'admin@example.com', '123456789');
